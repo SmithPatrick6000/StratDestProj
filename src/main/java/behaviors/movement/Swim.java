@@ -1,4 +1,4 @@
-package main.java.behaviors;
+package main.java.behaviors.movement;
 
 public class Swim implements MoveBehavior{
 
