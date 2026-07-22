@@ -1,18 +1,16 @@
 package main.java.animals.lions;
 
 import main.java.animals.Animal;
-import main.java.behaviors.diet.DietBehavior;
-import main.java.behaviors.movement.MoveBehavior;
-import main.java.behaviors.sounds.SoundBehavior;
+import main.java.behaviors.diet.Carnivore;
+import main.java.behaviors.movement.Walk;
+import main.java.behaviors.sounds.Roar;
 
 public class Lion extends Animal {
     
-    public Lion(MoveBehavior moveBehavior, SoundBehavior soundBehavior, DietBehavior dietBehavior) {
-        super(moveBehavior, soundBehavior, dietBehavior);
+    public Lion() {
+
+        super(new Walk(), new Roar(), new Carnivore());
     }
     
-    
-    public void performMove() { moveBehavior.move(); }
-    public void performSound() { soundBehavior.sound(); }
-    public void performDiet() { dietBehavior.diet(); }
+
 }

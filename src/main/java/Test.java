@@ -3,7 +3,7 @@ package main.java;
 import main.java.animals.Animal;
 import main.java.animals.lions.*;
 
-public class Main {
+public class Test {
     
     public static void main(String[] args) {
         Animal congoLion = new CongoLion();
