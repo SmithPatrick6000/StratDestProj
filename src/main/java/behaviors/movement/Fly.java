@@ -3,6 +3,6 @@ package main.java.behaviors.movement;
 public class Fly implements MoveBehavior{
 
     @Override
-    public void move() { System.out.println("I'm flying"); }
+    public String move() { return ("I'm flying"); }
     
 }

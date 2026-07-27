@@ -16,8 +16,8 @@ public abstract class Animal {
         this.dietBehavior = dietBehavior;
     }
 
-    public void performMove() { moveBehavior.move(); }
-    public void performSound() { soundBehavior.sound(); }
-    public void performDiet() { dietBehavior.diet(); }
+    public String performMove() { return moveBehavior.move(); }
+    public String performSound() { return soundBehavior.sound(); }
+    public String performDiet() { return dietBehavior.diet(); }
     
 }
