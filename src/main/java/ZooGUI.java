@@ -12,10 +12,20 @@ import main.java.animals.*;
 public class ZooGUI extends JFrame{
 
     //HashMap to hold animal AND subspecies names
+    //This is the ONLY place that needs to be changed for implementing new animals/subspecies 
+    //      ONLY EDIT THIS DO NOT MAKE OTHER CHANGES
     private final Map<String, String[]> animals = new HashMap<>();
     {
         animals.put("lions", new String[]{"African Lion", "Congo Lion"});
         animals.put("birds", new String[]{"Chicken", "Swallow"});
+        animals.put("snakes", new String[]{"Burrowing Snake", "Common Adder"});
+        animals.put("elephants", new String[]{"Ghost Elephant", "Asian Elephant"});
+        animals.put("seals", new String[]{"Harbor Seal", "Elephant Seal"});
+        animals.put("cheetahs", new String[]{"East African Cheetah", "Northwest African Cheetah"});
+        animals.put("fishs", new String[]{"Great White Shark", "Parrotfish"});
+        animals.put("kangaroos", new String[]{"Eastern Grey Kangaroo", "Red Kangaroo"});
+        animals.put("anteaters", new String[]{"Silky Anteater", "Collared Anteater"});
+        animals.put("bears", new String[]{"Brown Bear", "Panda"});
     }
 
     
@@ -71,6 +81,7 @@ public class ZooGUI extends JFrame{
             button.addActionListener(e -> showSubspecies(animal));
             panel.add(button);
         }
+        display.setText("Select an Animal");
 
         return panel;
     }
@@ -93,7 +104,9 @@ public class ZooGUI extends JFrame{
         panel.add(subButtons, BorderLayout.CENTER);
 
         JButton returnBtn = new JButton("Back to Animals");
-        returnBtn.addActionListener(e -> cL.show(mainPanel, "ANIMALS"));
+        returnBtn.addActionListener(e -> {
+            display.setText("Select an Animal");
+            cL.show(mainPanel, "ANIMALS");});
         panel.add(returnBtn, BorderLayout.SOUTH);
 
         return panel;
@@ -120,6 +133,7 @@ public class ZooGUI extends JFrame{
         subButtons.revalidate();
         subButtons.repaint();
         
+        display.setText("Select a Subspecies");
         cL.show(mainPanel, "SUBSPECIES");
     }
 
@@ -175,7 +189,9 @@ public class ZooGUI extends JFrame{
         
 
         JButton returnBtn = new JButton("Back to Subspecies");
-        returnBtn.addActionListener(e -> cL.show(mainPanel, "SUBSPECIES"));
+        returnBtn.addActionListener(e -> {
+            display.setText("Select a Subspecies");
+            cL.show(mainPanel, "SUBSPECIES"); });
         panel.add(returnBtn, BorderLayout.SOUTH);
         
         move.addActionListener(e -> {
