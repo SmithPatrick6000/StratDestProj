@@ -8,11 +8,11 @@ Ensure that the bin directory exists
      If not run _mkdir bin_
  Finally run the following commands
  1. First Run
-for /f "delims=" %i in ('dir /s /b src\*.java') do @set "p=%i" && @call echo "%p:\=/%">>sources.txt
+-- for /f "delims=" %i in ('dir /s /b src\*.java') do @set "p=%i" && @call echo "%p:\=/%">>sources.txt --
  2. Then Run
-javac -d bin -sourcepath src @sources.txt
+-- javac -d bin -sourcepath src @sources.txt --
  3. Finally Run
-java -cp bin main.java.ZooApplication
+-- java -cp bin main.java.ZooApplication --
 
 
 **Strategy Pattern Implementation**
