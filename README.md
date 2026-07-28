@@ -4,6 +4,9 @@ This project relies on standard Java core libraries (javax.swing, java.awt, java
 **How to Compile and Run**
 
 Open Command Prompt in the root directory of the project
+Ensure that the bin directory exists
+     If not run _mkdir bin_
+ Finally run the following commands
  1. First Run
 for /f "delims=" %i in ('dir /s /b src\*.java') do @set "p=%i" && @call echo "%p:\=/%">>sources.txt
  2. Then Run
